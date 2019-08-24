@@ -1,4 +1,4 @@
-package com.kesava.curd.curdoperation.model;
+package com.kesava.crud.crudoperation.model;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

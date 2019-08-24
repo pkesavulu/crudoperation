@@ -9,11 +9,11 @@
 		<version>2.1.4.RELEASE</version>
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.kesava.curd</groupId>
-	<artifactId>curdoperation</artifactId>
+	<groupId>com.kesava.crud</groupId>
+	<artifactId>crudoperation</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>curdoperation</name>
-	<description>Demo project for Spring Boot</description>
+	<name>crudoperation</name>
+	<description>Crudoperation Spring Boot</description>
 
 	<properties>
 		<java.version>1.8</java.version>
@@ -51,6 +51,11 @@
 			<groupId>org.apache.derby</groupId>
 			<artifactId>derby</artifactId>
 			<scope>runtime</scope>
+		</dependency>
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>1.2.17</version>
 		</dependency>
 
 	</dependencies>

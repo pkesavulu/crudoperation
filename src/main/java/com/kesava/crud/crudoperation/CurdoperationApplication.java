@@ -1,17 +1,19 @@
-package com.kesava.curd.curdoperation;
+package com.kesava.crud.crudoperation;
 
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import com.kesava.curd.curdoperation.model.Customer;
-import com.kesava.curd.curdoperation.service.CurdService;
+import com.kesava.crud.crudoperation.model.Customer;
+import com.kesava.crud.crudoperation.service.CrudService;
 
 @SpringBootApplication
 public class CurdoperationApplication {
+	static Logger logger = Logger.getLogger(CurdoperationApplication.class);
 	
 	@Autowired
-	private CurdService curdService;
+	private CrudService crudService;
 
 	public static void main(String[] args) {
 		SpringApplication.run(CurdoperationApplication.class, args);
@@ -24,7 +26,8 @@ public class CurdoperationApplication {
 		customer.setEmail("kesava@gmail.com");
 		customer.setPhone("8801384532");
 		customer.setCurrentbalance(25000);
-		curdService.saveCustomer(customer);
+		crudService.saveCustomer(customer);
+		logger.info("inserting customer object");
 	}
 
 }

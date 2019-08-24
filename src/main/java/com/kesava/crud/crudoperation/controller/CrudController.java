@@ -1,4 +1,4 @@
-package com.kesava.curd.curdoperation.controller;
+package com.kesava.crud.crudoperation.controller;
 
 import java.util.Optional;
 
@@ -12,14 +12,14 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.kesava.curd.curdoperation.model.Customer;
-import com.kesava.curd.curdoperation.service.CurdService;
+import com.kesava.crud.crudoperation.model.Customer;
+import com.kesava.crud.crudoperation.service.CrudService;
 
 @Controller
-public class CurdController {
+public class CrudController {
 
 @Autowired
-private CurdService curdService;
+private CrudService crudService;
 	
 @GetMapping(value = "/")
 @ResponseBody
@@ -29,30 +29,30 @@ public String hello() {
 
 @PostMapping(value = "/createcustomer")
 public void addCustomer(@RequestBody Customer customer) {
-	curdService.saveCustomer(customer);
+	crudService.saveCustomer(customer);
 }
 
 @GetMapping(value = "/getallcustomer")
 @ResponseBody
 public Iterable<Customer> getAllCustomers() {
-	return curdService.getAllCustomers(); 
+	return crudService.getAllCustomers(); 
 }
 
 @GetMapping(value = "/getcustomer/{id}")
 @ResponseBody
 public Optional<Customer> getCustomer(@RequestParam("id") Integer id) {
-	return curdService.getByCustomerId(id);
+	return crudService.getByCustomerId(id);
 }
 
 @PutMapping(value = "/update/{id}/{currentbalance}")
 @ResponseBody
 public Customer updateCustomer(@RequestParam("id") Integer id,@RequestParam("currentbalance") long currentbalance) {
-	return curdService.updateCustomerBalance(id,currentbalance);
+	return crudService.updateCustomerBalance(id,currentbalance);
 }
 
 @DeleteMapping(value = "/delete/{id}")
 public void deleteCustomer(@RequestParam("id") Integer id) {
-	curdService.deleteByCustomer(id);
+	crudService.deleteByCustomer(id);
 }
 
 }
