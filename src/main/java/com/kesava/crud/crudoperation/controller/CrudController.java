@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -43,19 +44,19 @@ public Iterable<Customer> getAllCustomers() {
 
 @GetMapping(value = "/getcustomer/{id}")
 @ResponseBody
-public Optional<Customer> getCustomer(@RequestParam("id")Integer id) {
+public Optional<Customer> getCustomer(@PathVariable("id")Integer id) {
 	logger.info("calling getcustomer ....");
 	return crudService.getByCustomerId(id);
 }
 
 @PutMapping(value = "/update/{id}/{currentbalance}")
 @ResponseBody
-public Customer updateCustomer(@RequestParam("id") Integer id,@RequestParam("currentbalance") long currentbalance) {
+public Customer updateCustomer(@PathVariable("id") Integer id,@PathVariable("currentbalance") long currentbalance) {
 	return crudService.updateCustomerBalance(id,currentbalance);
 }
 
 @DeleteMapping(value = "/delete/{id}")
-public void deleteCustomer(@RequestParam("id") Integer id) {
+public void deleteCustomer(@PathVariable("id") Integer id) {
 	crudService.deleteByCustomer(id);
 }
 

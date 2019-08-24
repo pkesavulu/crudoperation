@@ -15,3 +15,26 @@
 2019-08-24 20:33:50 INFO  CrudService:25 - save the customer data
 2019-08-24 20:33:51 INFO  CrudoperationApplication:25 - inserting customer object
 2019-08-24 20:34:30 INFO  CrudService:30 - find all the customers
+2019-08-24 20:38:31 INFO  CrudService:25 - save the customer data
+2019-08-24 20:38:32 INFO  CrudoperationApplication:25 - inserting customer object
+2019-08-24 20:43:25 INFO  CrudService:30 - find all the customers
+2019-08-24 20:44:21 INFO  CrudService:25 - save the customer data
+2019-08-24 20:44:21 INFO  CrudoperationApplication:25 - inserting customer object
+2019-08-24 20:47:01 INFO  CrudService:25 - save the customer data
+2019-08-24 20:47:01 INFO  CrudoperationApplication:25 - inserting customer object
+2019-08-24 20:47:42 INFO  CrudController:48 - calling getcustomer ....
+2019-08-24 20:47:42 INFO  CrudService:35 - find the customer
+2019-08-24 20:48:01 INFO  CrudService:25 - save the customer data
+2019-08-24 20:48:20 INFO  CrudService:30 - find all the customers
+2019-08-24 20:48:29 INFO  CrudController:48 - calling getcustomer ....
+2019-08-24 20:48:29 INFO  CrudService:35 - find the customer
+2019-08-24 20:49:51 INFO  CrudService:25 - save the customer data
+2019-08-24 20:49:51 INFO  CrudoperationApplication:25 - inserting customer object
+2019-08-24 20:49:56 INFO  CrudService:48 - update the customer
+2019-08-24 20:50:09 INFO  CrudController:48 - calling getcustomer ....
+2019-08-24 20:50:09 INFO  CrudService:35 - find the customer
+2019-08-24 20:50:13 INFO  CrudService:30 - find all the customers
+2019-08-24 20:51:03 INFO  CrudService:40 - delete the customer
+2019-08-24 20:51:34 INFO  CrudService:30 - find all the customers
+2019-08-24 20:51:41 INFO  CrudService:40 - delete the customer
+2019-08-24 20:52:17 INFO  CrudService:30 - find all the customers
