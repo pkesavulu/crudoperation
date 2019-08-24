@@ -27,7 +27,7 @@ public class CrudoperationApplication {
 		customer.setPhone("8801384532");
 		customer.setCurrentbalance(25000);
 		crudService.saveCustomer(customer);
-		logger.debug("inserting customer object");
+		logger.info("inserting customer object");
 	}
 
 }
