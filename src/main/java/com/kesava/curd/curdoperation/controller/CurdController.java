@@ -6,7 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -25,32 +27,31 @@ public String hello() {
 	return "<h1>welcome to my project</h1>";
 }
 
-@GetMapping(value = "/createcustomer")
-@ResponseBody
-public void createCustomer(Customer customer) {
+@PostMapping(value = "/createcustomer")
+public void addCustomer(@RequestBody Customer customer) {
 	curdService.saveCustomer(customer);
 }
 
 @GetMapping(value = "/getallcustomer")
 @ResponseBody
-public Iterable<Customer> getAllCustomer() {
-	return curdService.getAllCustomer(); 
+public Iterable<Customer> getAllCustomers() {
+	return curdService.getAllCustomers(); 
 }
 
 @GetMapping(value = "/getcustomer/{id}")
 @ResponseBody
-public Optional<Customer> getCustomer(int id) {
+public Optional<Customer> getCustomer(@RequestParam("id") Integer id) {
 	return curdService.getByCustomerId(id);
 }
 
-@PutMapping(value = "/update/{id}")
+@PutMapping(value = "/update/{id}/{currentbalance}")
 @ResponseBody
-public void updateCustomer(@RequestParam("customer")Customer customer,@RequestParam("id") int id) {
-	curdService.saveCustomer(customer);
+public Customer updateCustomer(@RequestParam("id") Integer id,@RequestParam("currentbalance") long currentbalance) {
+	return curdService.updateCustomerBalance(id,currentbalance);
 }
 
 @DeleteMapping(value = "/delete/{id}")
-public void deleteCustomer(@RequestParam("id") int id) {
+public void deleteCustomer(@RequestParam("id") Integer id) {
 	curdService.deleteByCustomer(id);
 }
 

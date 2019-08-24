@@ -12,14 +12,15 @@ public class Customer {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
-	private int id;
+	private Integer id;
 	private String name;
-	private String address;
-	private String deposit;
-	public int getId() {
+	private String Email;
+	private String phone;
+	private long currentbalance;
+	public Integer getId() {
 		return id;
 	}
-	public void setId(int id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 	public String getName() {
@@ -28,21 +29,27 @@ public class Customer {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public String getAddress() {
-		return address;
+	public String getEmail() {
+		return Email;
 	}
-	public void setAddress(String address) {
-		this.address = address;
+	public void setEmail(String email) {
+		Email = email;
 	}
-	public String getDeposit() {
-		return deposit;
+	public String getPhone() {
+		return phone;
 	}
-	public void setDeposit(String deposit) {
-		this.deposit = deposit;
+	public void setPhone(String phone) {
+		this.phone = phone;
+	}
+	public long getCurrentbalance() {
+		return currentbalance;
+	}
+	public void setCurrentbalance(long currentbalance) {
+		this.currentbalance = currentbalance;
 	}
 	@Override
 	public String toString() {
-		return "Customer [id=" + id + ", name=" + name + ", address=" + address + ", deposit=" + deposit + "]";
+		return "Customer [id=" + id + ", name=" + name + ", Email=" + Email + ", phone=" + phone + ", currentbalance="
+				+ currentbalance + "]";
 	}
-	
 }
