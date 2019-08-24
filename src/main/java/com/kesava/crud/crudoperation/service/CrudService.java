@@ -17,27 +17,27 @@ public class CrudService {
 	private CrudRepo crudRepo;
 
 	public void saveAllCustomer(Iterable<Customer> customer) {
-		logger.info("save all the customers data");
+		logger.debug("save all the customers data");
 		crudRepo.saveAll(customer);
 	}
 
 	public void saveCustomer(Customer customer) {
-		logger.info("save the customer data");
+		logger.debug("save the customer data");
 		crudRepo.save(customer);
 	}
 
 	public Iterable<Customer> getAllCustomers() {
-		logger.info("find all the customers");
+		logger.debug("find all the customers");
 		return crudRepo.findAll();
 	}
 
 	public Optional<Customer> getByCustomerId(Integer id) {
-		logger.info("find the customer");
+		logger.debug("find the customer");
 		return crudRepo.findById(id);
 	}
 
 	public void deleteByCustomer(int id) {
-		logger.info("delete the customer");
+		logger.debug("delete the customer");
 		crudRepo.deleteById(id);
 	}
 
@@ -45,7 +45,7 @@ public class CrudService {
 		Customer customer = crudRepo.findById(id).orElse(null);
 		customer.setCurrentbalance(currentbalance);
 		Customer updatedCustomer = crudRepo.save(customer);
-		logger.info("update the customer");
+		logger.debug("update the customer");
 		return updatedCustomer;
 
 	}

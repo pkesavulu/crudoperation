@@ -9,14 +9,14 @@ import com.kesava.crud.crudoperation.model.Customer;
 import com.kesava.crud.crudoperation.service.CrudService;
 
 @SpringBootApplication
-public class CurdoperationApplication {
-	static Logger logger = Logger.getLogger(CurdoperationApplication.class);
+public class CrudoperationApplication {
+	static Logger logger = Logger.getLogger(CrudoperationApplication.class);
 	
 	@Autowired
 	private CrudService crudService;
 
 	public static void main(String[] args) {
-		SpringApplication.run(CurdoperationApplication.class, args);
+		SpringApplication.run(CrudoperationApplication.class, args);
 		
 	}
 	
@@ -27,7 +27,7 @@ public class CurdoperationApplication {
 		customer.setPhone("8801384532");
 		customer.setCurrentbalance(25000);
 		crudService.saveCustomer(customer);
-		logger.info("inserting customer object");
+		logger.debug("inserting customer object");
 	}
 
 }
