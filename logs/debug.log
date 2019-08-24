@@ -1,0 +1,17 @@
+2019-08-24 20:18:07 INFO  CrudService:25 - save the customer data
+2019-08-24 20:18:07 INFO  CrudoperationApplication:25 - inserting customer object
+2019-08-24 20:18:32 INFO  CrudService:30 - find all the customers
+2019-08-24 20:23:23 INFO  CrudService:25 - save the customer data
+2019-08-24 20:24:25 INFO  CrudService:25 - save the customer data
+2019-08-24 20:24:25 INFO  CrudoperationApplication:25 - inserting customer object
+2019-08-24 20:24:29 INFO  CrudService:25 - save the customer data
+2019-08-24 20:25:00 INFO  CrudService:30 - find all the customers
+2019-08-24 20:27:35 INFO  CrudService:25 - save the customer data
+2019-08-24 20:27:35 INFO  CrudoperationApplication:25 - inserting customer object
+2019-08-24 20:30:49 INFO  CrudService:25 - save the customer data
+2019-08-24 20:30:49 INFO  CrudoperationApplication:25 - inserting customer object
+2019-08-24 20:31:58 INFO  CrudService:25 - save the customer data
+2019-08-24 20:31:58 INFO  CrudoperationApplication:25 - inserting customer object
+2019-08-24 20:33:50 INFO  CrudService:25 - save the customer data
+2019-08-24 20:33:51 INFO  CrudoperationApplication:25 - inserting customer object
+2019-08-24 20:34:30 INFO  CrudService:30 - find all the customers

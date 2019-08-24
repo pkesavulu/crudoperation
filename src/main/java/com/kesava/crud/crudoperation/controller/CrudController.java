@@ -2,6 +2,7 @@ package com.kesava.crud.crudoperation.controller;
 
 import java.util.Optional;
 
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -17,6 +18,7 @@ import com.kesava.crud.crudoperation.service.CrudService;
 
 @Controller
 public class CrudController {
+	static Logger logger = Logger.getLogger(CrudController.class);
 
 @Autowired
 private CrudService crudService;
@@ -28,6 +30,7 @@ public String hello() {
 }
 
 @PostMapping(value = "/createcustomer")
+@ResponseBody
 public void addCustomer(@RequestBody Customer customer) {
 	crudService.saveCustomer(customer);
 }
@@ -40,7 +43,8 @@ public Iterable<Customer> getAllCustomers() {
 
 @GetMapping(value = "/getcustomer/{id}")
 @ResponseBody
-public Optional<Customer> getCustomer(@RequestParam("id") Integer id) {
+public Optional<Customer> getCustomer(@RequestParam("id")Integer id) {
+	logger.info("calling getcustomer ....");
 	return crudService.getByCustomerId(id);
 }
 
