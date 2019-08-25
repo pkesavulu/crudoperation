@@ -11,7 +11,7 @@ import com.kesava.crud.crudoperation.service.CrudService;
 @SpringBootApplication 
 public class CrudoperationApplication {
 	static Logger logger = Logger.getLogger(CrudoperationApplication.class);
-	
+	 
  
 	public static void main(String[] args) {
 		ConfigurableApplicationContext applicationContext = SpringApplication.run(CrudoperationApplication.class, args);
@@ -19,7 +19,7 @@ public class CrudoperationApplication {
 		Customer customer = new Customer();
 		customer.setName("kesava");
 		customer.setEmail("kesava@gmail.com");
-		customer.setPhone("8801384532");
+		customer.setPhone("8801384781");
 		customer.setCurrentbalance(25000);
 		crudService.saveCustomer(customer);
 		logger.info("inserted customer object");

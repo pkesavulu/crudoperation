@@ -1,20 +1,6 @@
-/*$.ajax({
-    url: host + '/home/allpropertylist',
-    method: 'get',
-    dataType: 'json',
-    success: function(data) {
-
-        console.log(data);
-
-        data.forEach(function(item) {
-            $('tbody').append('<tr><td>' + item.site_id + '</td><td>' + item["add_creation_data"] + '</td><td>' + item["city"] + '</td><td>' + '<img src="data:image/jpg;base64,' + item.site_img_1 + '" alt="chennai" width="50" height="50"/></td></td>' + '</td><td>' + '<img src="data:image/jpg;base64,' + item.site_img_2 + '" alt="chennai" width="50" height="50"/>' + '</td></td>' + '</td><td>' + '<img src="data:image/jpg;base64,' + item.site_img_3 + '" alt="chennai" width="50" height="50"/>' + '</td></td>' + '</td><td>' + '<img src="data:image/jpg;base64,' + item.site_img_4 + '" alt="chennai" width="50" height="50"/>' + '</td></td>' + '</td><td>' + item["small_description"] + '</td></td>' + '</td><td class="wordbreak">' + item["detailed_description"] + '</td></td>' + '</td><td>' + item["price"] + '</td></td>' + '</td><td>' + item["builder_name"] + '</td></td>' + '</td><td>' + '<button id="btnedit" class="w3-btn w3-white w3-large" data-toggle="modal" data-target="#myModal" onclick="Edit()"><i class="w3-margin-center fa fa-edit"></i></button>' + '</td></td>' + '</td><td>' + '<button class="w3-btn w3-white w3-large" onclick="deleteProperty(' + item.site_id + ')"><i class="w3-margin-center fa fa-trash"></i></button>' + '</td><td>' + '<button class="w3-btn w3-black w3-large" onclick="viewproperty()"><i class="w3-margin-center fa fa-refresh"></i></button>' + '</td><td>' + '<span id="result"></span>' + '</td></tr>')
-        }); //    <button class="w3-btn w3-green w3-large" onclick="viewproperty()"><i class="w3-margin-left fa fa-refresh"></i></button>
-    }
-});*/
-//<pre > < span id = "result" > < /span></pre >
-
+var host = "http://localhost:8080";
 $.ajax({
-    url: 'http://localhost:8080/getallcustomer',
+    url: host +'/getallcustomer',
     method: 'get',
     dataType: 'json',
     success: function(data) {
@@ -28,10 +14,7 @@ $.ajax({
 function deletecustomer(id) {
     $.ajax({
         type: 'DELETE',
-        url: 'http://localhost:8080/delete/'+id,
-        success: function(id) {
-        	console.log("deleted"+id);
-        }
+        url: host +'/delete/'+id
     });
 }
 
@@ -72,14 +55,12 @@ function updatedCurrentBalance() {
     console.log(jsondata);
    $.ajax({
         type: 'PUT',
-        url: 'http://localhost:8080/update/'+id+'/'+currentbalance,
+        url: host +'/update/'+id+'/'+currentbalance,
     });
-    
    $('#myModal').modal('toggle');
 }
 
 $(document).ready(function() {
-
     $("#btnSave").click(function(event) {
         event.preventDefault();
         addCustomer();
@@ -97,7 +78,7 @@ function addCustomer() {
 	    console.log(jsondata);
 	   $.ajax({
 	        type: 'POST',
-	        url: 'http://localhost:8080/createcustomer',
+	        url: host +'/createcustomer',
 	       data: jsondata,
 	        dataType: 'json',
 	        success: function(data) {
