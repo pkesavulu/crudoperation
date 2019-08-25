@@ -11,8 +11,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.kesava.crud.crudoperation.model.Customer;
@@ -21,14 +19,14 @@ import com.kesava.crud.crudoperation.service.CrudService;
 @Controller
 public class CrudController {
 	static Logger logger = Logger.getLogger(CrudController.class);
- 
+   
 @Autowired
 private CrudService crudService;
 
 @GetMapping(value = "/") 
 public String index() { 
-	return "customer";
-}
+	return "index";
+}  
 
 @PostMapping(value = "/createcustomer")
 @ResponseBody

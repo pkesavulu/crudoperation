@@ -6,7 +6,7 @@ $.ajax({
     success: function(data) {
     	console.log(data);
         data.forEach(function(item) {
-            $('tbody').append('<tr><td>' + item.id + '</td><td>' + item["name"] + '</td><td>' + item["email"] + '</td><td>' + item.phone + '</td><td>' + item.currentbalance + '</td><td><button id="btnedit" class="btn btn-light" data-toggle="modal" data-target="#myModal" onclick="Edit()">Update</button></td><td><button class="btn btn-danger" onclick="deletecustomer(' + item.id + ')">Delete</button></td></tr>')
+            $('tbody').append('<tr><td>' + item.id + '</td><td>' + item["name"] + '</td><td>' + item["email"] + '</td><td>' + item.phone + '</td><td>' + item.currentbalance + '</td><td><button id="btnedit" class="btn btn-light" data-toggle="modal" data-target="#myModal" onclick="updateBalance()">Update</button></td><td><button class="btn btn-danger" onclick="deletecustomer(' + item.id + ')">Delete</button></td></tr>')
         });
     }
 });
@@ -16,9 +16,10 @@ function deletecustomer(id) {
         type: 'DELETE',
         url: host +'/delete/'+id
     });
+    window.location.href = host+ "/";
 }
 
-function Edit() {
+function updateBalance() {
   var table = document.getElementById("tblprt"),
         rIndex;
 
@@ -58,6 +59,7 @@ function updatedCurrentBalance() {
         url: host +'/update/'+id+'/'+currentbalance,
     });
    $('#myModal').modal('toggle');
+   window.location.href = host+ "/";
 }
 
 $(document).ready(function() {
@@ -90,4 +92,5 @@ function addCustomer() {
 	    });
 	    
 	   $('#addModal').modal('toggle');
+	   window.location.href = host+ "/";
 	}
