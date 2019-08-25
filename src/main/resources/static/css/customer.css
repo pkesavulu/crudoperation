@@ -1,0 +1,44 @@
+td, th {
+	padding: 8px;
+	text-align: center;
+	border-bottom: 1px solid #ddd;
+}
+
+table {
+	border-collapse: collapse;
+	width: 60%;
+}
+
+tr:hover {
+	background-color: #f5f5f5;
+}
+
+h1 {
+	color: dimgrey;
+}
+
+.wordbreak {
+	word-wrap: break-word;
+}
+
+.formsize {
+	width: 398px;
+	background: white;
+}
+
+textarea {
+	font: -webkit-small-control;
+	margin: 0;
+}
+
+.modal-content {
+	position: absolute;
+	background-color: #fff;
+	background-clip: padding-box;
+	border: 1px solid #999;
+	border: 54px rgba(0, 0, 0, .2);
+	border-radius: 6px;
+	-webkit-box-shadow: 0 3px 9px rgba(0, 0, 0, .5);
+	box-shadow: 0 3px 9px rgba(0, 0, 0, .5);
+	outline: 0;
+}

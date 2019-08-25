@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script type="text/javascript" src="/js/loading.js"></script>
+    <link rel="stylesheet" type="text/css" href="/css/loading.css">
+    <link rel="stylesheet" type="text/css" href="/css/header.css">
+    <script src="/js/config.js"></script>
+    <script src="/js/viewproperty.js"></script>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="shortcut icon" href="/images/Nikias_logo.jpg" type="image/x-icon"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        td,
+        th {
+            padding: 8px;
+            text-align: center;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            overflow-x: auto;
+            white-space: nowrap;
+            display: block;
+        }
+        
+        tr:hover {
+            background-color: #f5f5f5;
+        }
+        
+        h1 {
+            color: dimgrey;
+        }
+        
+        .wordbreak {
+            word-wrap: break-word;
+        }
+        
+        .formsize {
+            width: 398px;
+            background: white;
+        }
+        
+        textarea {
+            font: -webkit-small-control;
+            margin: 0;
+        }
+        
+        .modal-content {
+            position: absolute;
+            background-color: #fff;
+            background-clip: padding-box;
+            border: 1px solid #999;
+            border: 54px rgba(0, 0, 0, .2);
+            border-radius: 6px;
+            -webkit-box-shadow: 0 3px 9px rgba(0, 0, 0, .5);
+            box-shadow: 0 3px 9px rgba(0, 0, 0, .5);
+            outline: 0;
+        }
+    </style>
+
+</head>
+
+<body>
+        <div class="col-md-12">
+        <h1>Property details</h1>
+        <table id="tblprt">
+            <thead>
+                <tr>
+                    <th>SITE ID</th>
+                    <th>ADDED CREATED DATE</th>
+                    <th>CITY NAME</th>
+                    <th>PROPERTY FRONT VIEW</th>
+                    <th>PROPERTY INNER VIEW</th>
+                    <th>PROPERTY OUTER VIEW</th>
+                    <th>PROPERTY BACK VIEW</th>
+                    <th>DESCRIPTION</th>
+                    <th>DETAILED DESCRIPTION</th>
+                    <th>PRICE</th>
+                    <th>BUILDER NAME</th>
+                    <th>EDIT</th>
+                    <th>DELETE</th>
+                    <th>REFRESH</th>
+                    <th>STATUS</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+    <div>
+        <!-- <h1>Edit</h1> -->
+        <div class="modal fade left" id="myModal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3 class="pull-left no-margin">Edit Property Details</h3>
+                        <button type="button" class="close" data-dismiss="modal" title="Close"><span class="glyphicon glyphicon-remove"></span>
+    </button>
+                    </div>
+                    <div class="modal-body inner-boader formsize">
+                        <form class="form-horizontal" method="PUT" enctype="multipart/form-data" id="fileUploadEditForm">
+                            <div class="alert alert-info">
+                                <strong>Note:</strong> When you edit anything here should add images along with otherwise data will not update.
+                            </div>
+                            siteid:<input type="text" id="site_id" name="site_id" placeholder="sno" readonly/><br><br> date:
+                            <input type="text" id="insert_date" name="insert_date" placeholder="date" readonly/><br><br> city:
+                            <input type="text" id="city" name="city" placeholder="cityname" /><br><br> image1:
+                            <input type="file" id="img1" name="files" /><br/> image2:
+                            <input type="file" id="img2" name="files" /><br/> image3:
+                            <input type="file" id="img3" name="files" /><br/> image4:
+                            <input type="file" id="img4" name="files" /><br/> description:
+                            <input type="text" id="desc" class="input" name="small_description" placeholder="Add your description here" />
+                            <br><br> detailed_description:
+                            <textarea rows="4" cols="50" name="detailed_description" id="detail_desc"></textarea>
+                            <br><br> price:
+                            <input type="text" id="price" class="input" name="price" placeholder="Add your price here" />
+                            <br><br> builder_name:
+                            <input type="text" id="bname" class="input" name="builder_name" placeholder="Add your Builder Name here" />
+                            <br><br>
+                            <button type="submit" id="btnSubmit">save</button>
+                            <!-- <button type="button" onclick="adminlogin()">cancel</button> -->
+                            <br><br>
+                            <div class="alert alert-success">
+                                <center><strong id="status">Status?</strong></center>
+                            </div>
+                            <br>
+                        </form>
+                    </div>
+                    <!-- <div class="col-md-4">
+                            <img src="/images/welcome.jpg" alt="welcome">
+                        </div> -->
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- </div> -->
+    <!-- </div> -->
+    <br>
+    <!-- <button class="w3-btn w3-black w3-large" onclick="logout()">Back to Admin page<i class="w3-margin-left fa fa-close"></i></button> -->
+    <br><br>
+    <!-- <button id="logout" onclick="logout()">logout</button> -->
+</body>
+
+</html>

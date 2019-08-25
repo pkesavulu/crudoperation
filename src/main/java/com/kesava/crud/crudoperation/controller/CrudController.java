@@ -5,6 +5,7 @@ import java.util.Optional;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -32,11 +33,13 @@ public String hello() {
 
 @PostMapping(value = "/createcustomer")
 @ResponseBody
-public void addCustomer(@RequestBody Customer customer) {
+@CrossOrigin
+public void addCustomer(Customer customer) {
 	crudService.saveCustomer(customer);
 }
 
 @GetMapping(value = "/getallcustomer")
+@CrossOrigin
 @ResponseBody
 public Iterable<Customer> getAllCustomers() {
 	return crudService.getAllCustomers(); 
@@ -44,6 +47,7 @@ public Iterable<Customer> getAllCustomers() {
 
 @GetMapping(value = "/getcustomer/{id}")
 @ResponseBody
+@CrossOrigin
 public Optional<Customer> getCustomer(@PathVariable("id")Integer id) {
 	logger.info("calling getcustomer ....");
 	return crudService.getByCustomerId(id);
@@ -51,11 +55,14 @@ public Optional<Customer> getCustomer(@PathVariable("id")Integer id) {
 
 @PutMapping(value = "/update/{id}/{currentbalance}")
 @ResponseBody
+@CrossOrigin
 public Customer updateCustomer(@PathVariable("id") Integer id,@PathVariable("currentbalance") long currentbalance) {
 	return crudService.updateCustomerBalance(id,currentbalance);
 }
 
 @DeleteMapping(value = "/delete/{id}")
+@CrossOrigin
+@ResponseBody
 public void deleteCustomer(@PathVariable("id") Integer id) {
 	crudService.deleteByCustomer(id);
 }
