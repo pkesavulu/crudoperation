@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="/js/customer.js"></script>
+    <style>
+        td,
+        th {
+            padding: 8px;
+            text-align: center;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        table {
+            border-collapse: collapse;
+            width: 60%;
+        }
+        
+        tr:hover {
+            background-color: #f5f5f5;
+        }
+        
+        h1 {
+            color: dimgrey;
+        }
+        
+        .wordbreak {
+            word-wrap: break-word;
+        }
+        
+        .formsize {
+            width: 398px;
+            background: white;
+        }
+        
+        textarea {
+            font: -webkit-small-control;
+            margin: 0;
+        }
+        
+        .modal-content {
+            position: absolute;
+            background-color: #fff;
+            background-clip: padding-box;
+            border: 1px solid #999;
+            border: 54px rgba(0, 0, 0, .2);
+            border-radius: 6px;
+            -webkit-box-shadow: 0 3px 9px rgba(0, 0, 0, .5);
+            box-shadow: 0 3px 9px rgba(0, 0, 0, .5);
+            outline: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <div>
+            <h1>CUSTOMERS DETAILS</h1><br>
+            <button id="btnedit" class="btn btn-primary" data-toggle="modal" data-target="#addModal">ADD NEW CUSTOMER</button>
+            <br><br>
+            <table id="tblprt">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Mobile</th>
+                        <th>Currentbalance</th>
+                        <th>Update</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+        <div>
+            <div class="modal fade left" id="myModal">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h3 class="pull-left no-margin">UPDATE CURRENT AMOUNT</h3>
+                            <button type="button" class="close" data-dismiss="modal" title="Close"><span class="glyphicon glyphicon-remove"></span>
+    </button>
+                        </div>
+                        <div class="modal-body inner-boader formsize">
+                            <form class="form-horizontal" method="PUT" enctype="multipart/form-data" id="fileUploadEditForm">
+                                CUSTOMER ID : <input type="text" id="id" name="site_id" placeholder="id" readonly/><br><br> NAME : <input type="text" id="name" name="insert_date" placeholder="name" readonly/><br><br> EMAIL : <input type="text" id="email"
+                                    name="city" placeholder="email" readonly/><br><br> PHONE : <input type="text" id="phone" name="insert_date" placeholder="phone" readonly/><br><br> BALANCE : <input type="text" id="currentbalance" name="city" placeholder="currentbalance"
+                                /><br><br>
+                                <button type="submit" id="btnSubmit">save</button>
+                                <br><br>
+                                <br>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <div class="modal fade left" id="addModal">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h3 class="pull-left no-margin">ADD NEW CUSTOMER</h3>
+                            <button type="button" class="close" data-dismiss="modal" title="Close"><span class="glyphicon glyphicon-remove"></span>
+    </button>
+                        </div>
+                        <div class="modal-body inner-boader formsize">
+                            <form class="form-horizontal" method="POST">
+                                <!--  CUSTOMER ID : <input type="text" id="addid" name="site_id" placeholder="id"/><br><br>  -->
+                                NAME : <input type="text" id="addname" name="insert_date" placeholder="name" /><br><br> EMAIL : <input type="text" id="addemail" name="city" placeholder="email" /><br><br> PHONE : <input type="text" id="addphone" name="insert_date"
+                                    placeholder="phone" /><br><br> BALANCE : <input type="text" id="addcurrentbalance" name="city" placeholder="currentbalance" /><br><br>
+                                <button type="submit" id="btnSave">save</button>
+                                <br><br>
+                                <br>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</body>
+
+</html>

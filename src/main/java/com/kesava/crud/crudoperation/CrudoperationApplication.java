@@ -8,11 +8,11 @@ import org.springframework.context.ConfigurableApplicationContext;
 import com.kesava.crud.crudoperation.model.Customer;
 import com.kesava.crud.crudoperation.service.CrudService;
 
-@SpringBootApplication
+@SpringBootApplication 
 public class CrudoperationApplication {
 	static Logger logger = Logger.getLogger(CrudoperationApplication.class);
 	
-
+ 
 	public static void main(String[] args) {
 		ConfigurableApplicationContext applicationContext = SpringApplication.run(CrudoperationApplication.class, args);
 		CrudService crudService = applicationContext.getBean("crudService",CrudService.class);
@@ -22,7 +22,7 @@ public class CrudoperationApplication {
 		customer.setPhone("8801384532");
 		customer.setCurrentbalance(25000);
 		crudService.saveCustomer(customer);
-		logger.info("inserting customer object");
+		logger.info("inserted customer object");
 	}
 
 }

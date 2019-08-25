@@ -21,14 +21,13 @@ import com.kesava.crud.crudoperation.service.CrudService;
 @Controller
 public class CrudController {
 	static Logger logger = Logger.getLogger(CrudController.class);
-
+ 
 @Autowired
 private CrudService crudService;
-	
-@GetMapping(value = "/")
-@ResponseBody
-public String hello() {
-	return "<h1>welcome to my project</h1>";
+
+@GetMapping(value = "/") 
+public String index() { 
+	return "customer";
 }
 
 @PostMapping(value = "/createcustomer")
