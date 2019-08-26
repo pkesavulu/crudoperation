@@ -19,49 +19,58 @@ import com.kesava.crud.crudoperation.service.CrudService;
 @Controller
 public class CrudController {
 	static Logger logger = Logger.getLogger(CrudController.class);
-   
-@Autowired
-private CrudService crudService;
 
-@GetMapping(value = "/") 
-public String index() { 
-	return "index";
-}  
+	@Autowired
+	private CrudService crudService;
 
-@PostMapping(value = "/createcustomer")
-@ResponseBody
-@CrossOrigin
-public void addCustomer(Customer customer) {
-	crudService.saveCustomer(customer);
-}
+	@GetMapping(value = "/")
+	public String index() {
+		return "index";
+	}
 
-@GetMapping(value = "/getallcustomer")
-@CrossOrigin
-@ResponseBody
-public Iterable<Customer> getAllCustomers() {
-	return crudService.getAllCustomers(); 
-}
+	@PostMapping(value = "/createcustomer")
+	@ResponseBody
+	@CrossOrigin
+	public void addCustomer(Customer customer) {
+		crudService.saveCustomer(customer);
+	}
 
-@GetMapping(value = "/getcustomer/{id}")
-@ResponseBody
-@CrossOrigin
-public Optional<Customer> getCustomer(@PathVariable("id")Integer id) {
-	logger.info("calling getcustomer ....");
-	return crudService.getByCustomerId(id);
-}
+	@GetMapping(value = "/getallcustomer")
+	@CrossOrigin
+	@ResponseBody
+	public Iterable<Customer> getAllCustomers() {
+		return crudService.getAllCustomers();
+	}
 
-@PutMapping(value = "/update/{id}/{currentbalance}")
-@ResponseBody
-@CrossOrigin
-public Customer updateCustomer(@PathVariable("id") Integer id,@PathVariable("currentbalance") long currentbalance) {
-	return crudService.updateCustomerBalance(id,currentbalance);
-}
+	@GetMapping(value = "/getcustomer/{id}")
+	@ResponseBody
+	@CrossOrigin
+	public Optional<Customer> getCustomer(@PathVariable("id") Integer id) {
+		logger.info("calling getcustomer ....");
+		return crudService.getByCustomerId(id);
+	}
 
-@DeleteMapping(value = "/delete/{id}")
-@CrossOrigin
-@ResponseBody
-public void deleteCustomer(@PathVariable("id") Integer id) {
-	crudService.deleteByCustomer(id);
-}
+	@PutMapping(value = "/update/{id}/{currentbalance}")
+	@ResponseBody
+	@CrossOrigin
+	public Customer updateCustomer(@PathVariable("id") Integer id,
+			@PathVariable("currentbalance") long currentbalance) {
+		return crudService.updateCustomerBalance(id, currentbalance);
+	}
+
+	@DeleteMapping(value = "/delete/{id}")
+	@CrossOrigin
+	@ResponseBody
+	public void deleteCustomer(@PathVariable("id") Integer id) {
+		crudService.deleteByCustomer(id);
+	}
+
+	@PostMapping(value = "/smsservice/{name}/{currentbalance}/{phone}")
+	@ResponseBody
+	@CrossOrigin
+	public void customerSmsService(@PathVariable("name") String name,
+			@PathVariable("currentbalance") String currentbalance, @PathVariable("phone") String phone) {
+		crudService.sendSMS(name, currentbalance, phone);
+	}
 
 }

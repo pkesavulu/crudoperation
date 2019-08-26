@@ -8,22 +8,23 @@ import org.springframework.stereotype.Service;
 
 import com.kesava.crud.crudoperation.model.Customer;
 import com.kesava.crud.crudoperation.repository.CrudRepo;
+import com.kesava.crud.crudoperation.sns.NotificationService;
 
 @Service
 public class CrudService {
 	static Logger logger = Logger.getLogger(CrudService.class);
-	
+
 	@Autowired
 	private CrudRepo crudRepo;
 
 	public void saveAllCustomer(Iterable<Customer> customer) {
-		logger.info("save all the customers data");
 		crudRepo.saveAll(customer);
+		logger.info("Added the customers into a database");
 	}
 
 	public void saveCustomer(Customer customer) {
-		logger.info("save the customer data");
 		crudRepo.save(customer);
+		logger.info("Added " + customer.getName() + " into a database");
 	}
 
 	public Iterable<Customer> getAllCustomers() {
@@ -32,22 +33,27 @@ public class CrudService {
 	}
 
 	public Optional<Customer> getByCustomerId(Integer id) {
-		logger.info("find the customer");
+		logger.info("finding the customer :" + id);
 		return crudRepo.findById(id);
 	}
 
 	public void deleteByCustomer(int id) {
-		logger.info("delete the customer");
 		crudRepo.deleteById(id);
+		logger.info("deleted customer :" + id);
 	}
 
 	public Customer updateCustomerBalance(Integer id, long currentbalance) {
 		Customer customer = crudRepo.findById(id).orElse(null);
 		customer.setCurrentbalance(currentbalance);
 		Customer updatedCustomer = crudRepo.save(customer);
-		logger.info("update the customer");
+		logger.info("updated the " + customer.getName() + " currentbalance " + currentbalance + "into a database");
 		return updatedCustomer;
 
+	}
+
+	public void sendSMS(String name, String currentbalance, String phone) {
+		NotificationService.sendSMS(name, currentbalance, phone);
+		logger.info("Hi " + name + " your current balance is : " + currentbalance + " /-");
 	}
 
 }

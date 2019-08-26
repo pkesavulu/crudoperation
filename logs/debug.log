@@ -364,3 +364,47 @@
 2019-08-25 12:36:18 INFO  CrudService:30 - find all the customers
 2019-08-25 12:36:32 INFO  CrudService:25 - save the customer data
 2019-08-25 12:36:32 INFO  CrudService:30 - find all the customers
+2019-08-26 15:39:17 DEBUG NotificationService:52 - 8801384532 && type message here
+2019-08-26 15:39:23 DEBUG NotificationService:43 - unsubscribing user in aws
+2019-08-26 15:39:23 DEBUG NotificationService:54 - message sent success
+2019-08-26 16:11:04 INFO  CrudService:26 - save the customer data
+2019-08-26 16:11:04 INFO  CrudoperationApplication:25 - inserted customer object
+2019-08-26 16:11:24 INFO  CrudService:31 - find all the customers
+2019-08-26 16:11:39 INFO  CrudService:49 - update the customer
+2019-08-26 16:11:41 INFO  CrudService:31 - find all the customers
+2019-08-26 16:11:44 INFO  NotificationService:43 - unsubscribing user in aws
+2019-08-26 16:14:09 INFO  CrudService:26 - save the customer data
+2019-08-26 16:14:10 INFO  CrudService:31 - find all the customers
+2019-08-26 16:14:21 INFO  CrudService:49 - update the customer
+2019-08-26 16:14:22 INFO  CrudService:31 - find all the customers
+2019-08-26 16:14:23 INFO  NotificationService:43 - unsubscribing user in aws
+2019-08-26 16:44:24 INFO  CrudService:26 - save the customer data
+2019-08-26 16:44:24 INFO  CrudoperationApplication:25 - inserted customer object
+2019-08-26 16:44:33 INFO  CrudService:31 - find all the customers
+2019-08-26 16:44:43 INFO  CrudService:49 - update the customer
+2019-08-26 16:44:43 INFO  CrudService:31 - find all the customers
+2019-08-26 16:44:47 INFO  NotificationService:43 - unsubscribing user in aws
+2019-08-26 16:45:53 INFO  CrudService:26 - save the customer data
+2019-08-26 16:45:53 INFO  CrudService:31 - find all the customers
+2019-08-26 16:45:58 INFO  CrudService:49 - update the customer
+2019-08-26 16:45:59 INFO  CrudService:31 - find all the customers
+2019-08-26 16:46:00 INFO  NotificationService:43 - unsubscribing user in aws
+2019-08-26 16:46:16 INFO  CrudService:41 - delete the customer
+2019-08-26 16:46:17 INFO  CrudService:31 - find all the customers
+2019-08-26 16:47:40 INFO  CrudService:26 - save the customer data
+2019-08-26 16:47:40 INFO  CrudoperationApplication:25 - inserted customer object
+2019-08-26 16:48:00 INFO  CrudService:31 - find all the customers
+2019-08-26 16:48:08 INFO  CrudService:49 - update the customer
+2019-08-26 16:48:09 INFO  CrudService:31 - find all the customers
+2019-08-26 16:48:32 INFO  CrudService:49 - update the customer
+2019-08-26 16:48:33 INFO  CrudService:31 - find all the customers
+2019-08-26 16:48:49 INFO  CrudService:41 - delete the customer
+2019-08-26 16:48:50 INFO  CrudService:31 - find all the customers
+2019-08-26 16:49:27 INFO  CrudService:26 - save the customer data
+2019-08-26 16:49:28 INFO  CrudService:31 - find all the customers
+2019-08-26 16:56:06 INFO  CrudService:26 - save the customer data
+2019-08-26 16:56:07 INFO  CrudoperationApplication:25 - inserted customer object
+2019-08-26 16:56:55 INFO  CrudService:31 - find all the customers
+2019-08-26 16:57:02 INFO  CrudService:49 - update the customer
+2019-08-26 16:57:03 INFO  CrudService:31 - find all the customers
+2019-08-26 16:57:06 INFO  NotificationService:43 - unsubscribing user in aws

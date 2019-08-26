@@ -2,24 +2,39 @@
 # Spring Crudoperation Application 
 
 ## Running Crudoperation locally
-Crudoperation is a [Spring Boot](https://spring.io/guides/gs/spring-boot) application built using [Maven](https://spring.io/guides/gs/maven/). You can build a jar file and run it from the command line:
+Crudoperation is a [Spring Boot](https://spring.io/guides/gs/spring-boot) application built using [Maven](https://spring.io/guides/gs/maven/). You can build a jar file and run it from the command line.
 
 
 ```
 git clone https://github.com/pkesavulu/crudoperation.git
+
 cd crudoperation-master
+
 mvn clean install
+
 java -jar crudoperation-0.0.1-SNAPSHOT.jar
 ```
 
 You can then access Crudoperation here: http://localhost:8080/
 
-
+### <u>Note</u>:- 
+[accessKey,secretKey and topicArn](#AWS_Configuration) need to be updated in **application.properties** file before you can build the jar file.
 
 ## Database configuration
 
 Here default configuration, Crudoperation uses an in-memory database (APACHE DERBY).
 
+## AWS_Configuration
+
+We can send a notification to users using AWS SNS(Simple Notification Service).
+
+### Steps to configure AWS SNS:
+
+* Create accessKey and secretKey using [IAM User](https://docs.aws.amazon.com/sns/latest/dg/sns-setting-up.html)
+
+* Create a Topic using [Amazon SNS](https://docs.aws.amazon.com/sns/latest/dg/sns-getting-started.html) 
+
+* Finally **accessKey,secretKey** and **topicArn** add into an  **application.properties** file.
 
 ## Working with Curdoperation in your IDE
 

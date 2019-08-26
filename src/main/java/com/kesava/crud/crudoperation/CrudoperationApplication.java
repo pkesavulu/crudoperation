@@ -8,19 +8,18 @@ import org.springframework.context.ConfigurableApplicationContext;
 import com.kesava.crud.crudoperation.model.Customer;
 import com.kesava.crud.crudoperation.service.CrudService;
 
-@SpringBootApplication 
+@SpringBootApplication
 public class CrudoperationApplication {
 	static Logger logger = Logger.getLogger(CrudoperationApplication.class);
-	 
- 
+
 	public static void main(String[] args) {
 		ConfigurableApplicationContext applicationContext = SpringApplication.run(CrudoperationApplication.class, args);
-		CrudService crudService = applicationContext.getBean("crudService",CrudService.class);
+		CrudService crudService = applicationContext.getBean("crudService", CrudService.class);
 		Customer customer = new Customer();
 		customer.setName("kesava");
 		customer.setEmail("kesava@gmail.com");
-		customer.setPhone("8801384781");
-		customer.setCurrentbalance(25000);
+		customer.setPhone("9876543210");
+		customer.setCurrentbalance(50000);
 		crudService.saveCustomer(customer);
 		logger.info("inserted customer object");
 	}
